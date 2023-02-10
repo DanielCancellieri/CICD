@@ -24,11 +24,11 @@ jobs:
             client-secret: ${{ secrets.POWERPLATFORM_CLIENTSECRET }}
             tenant-id: ${{ secrets.TENANT_ID }}
             solution-name: ${{ secrets.SOLUTION_NAME }}
-            solution-output-file: bin/${{ secrets.SOLUTION_NAME }}
+            solution-output-file: bin/${{ secrets.SOLUTION_NAME }}.zip
       - name: unpack-solution action
         uses: microsoft/powerplatform-actions/unpack-solution@v0.6.3
         with:
-          solution-file: bin/${{ secrets.SOLUTION_NAME }}
+          solution-file: bin/${{ secrets.SOLUTION_NAME }}.zip
           solution-folder: out/${{ secrets.SOLUTION_NAME }}
           solution-type: 'Unmanaged'
           overwrite-files: true
