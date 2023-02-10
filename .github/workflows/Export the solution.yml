@@ -5,18 +5,18 @@ jobs:
   export:
     runs-on: windows-latest
     environment: 
-        name: pba-Build
+        name: pba-Dev
     steps:
       - uses: actions/checkout@v3
       - name: who-am-i action
-        uses: microsoft/powerplatform-actions/who-am-i@v0.6.3
+        uses: microsoft/powerplatform-actions/who-am-i@v
         with:
             environment-url: ${{ secrets.ENVIROMENT_URL }}
             app-id: ${{ secrets.POWERPLATFORM_APPID }}
             client-secret: ${{ secrets.POWERPLATFORM_CLIENTSECRET }}
             tenant-id: ${{ secrets.TENANT_ID }}
       - name: export-solution action
-        uses: microsoft/powerplatform-actions/export-solution@v0.6.3
+        uses: microsoft/powerplatform-actions/export-solution@v
         with:
             managed: false
             environment-url: ${{ secrets.ENVIROMENT_URL }}
@@ -26,7 +26,7 @@ jobs:
             solution-name: ${{ secrets.SOLUTION_NAME }}
             solution-output-file: bin/${{ secrets.SOLUTION_NAME }}.zip
       - name: unpack-solution action
-        uses: microsoft/powerplatform-actions/unpack-solution@v0.6.3
+        uses: microsoft/powerplatform-actions/unpack-solution@v
         with:
           solution-file: bin/${{ secrets.SOLUTION_NAME }}.zip
           solution-folder: out/${{ secrets.SOLUTION_NAME }}
