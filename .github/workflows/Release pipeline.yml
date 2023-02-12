@@ -6,7 +6,7 @@ jobs:
   convert-to-managed:
     runs-on: windows-latest
     environment: 
-      name: pba-Build
+      name: 'BUILD'
     steps:
     - uses: actions/checkout@v2
     - name: Pack solution
