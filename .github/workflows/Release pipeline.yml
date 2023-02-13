@@ -13,7 +13,7 @@ jobs:
       uses: microsoft/powerplatform-actions/pack-solution@v0.6.3
       with:
         solution-folder: sln/${{ secrets.SOLUTION_NAME }}
-        solution-file: out/${{ secrets.SOLUTION_NAME }}
+        solution-file: out/${{ secrets.SOLUTION_NAME }}.zip
         solution-type: Unmanaged
     - name: Import unmanaged solution
       uses: microsoft/powerplatform-actions/import-solution@v0.6.3
@@ -22,7 +22,7 @@ jobs:
         app-id: ${{ secrets.POWERPLATFORM_APPID }}
         client-secret: ${{ secrets.POWERPLATFORM_CLIENTSECRET }}
         tenant-id: ${{ secrets.TENANT_ID }}
-        solution-file: out/${{ secrets.SOLUTION_NAME }}
+        solution-file: out/${{ secrets.SOLUTION_NAME }}.zip
         force-overwrite: true
         publish-changes: true
     - name: Export managed solution
@@ -39,7 +39,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: managedSolutions
-        path: out/release/${{ secrets.SOLUTION_NAME }}
+        path: out/release/${{ secrets.SOLUTION_NAME }}.zip
   release:
     needs: [ convert-to-managed ]
     runs-on: windows-latest
@@ -59,6 +59,6 @@ jobs:
         app-id: ${{ secrets.POWERPLATFORM_APPID }}
         client-secret: ${{ secrets.POWERPLATFORM_CLIENTSECRET }}
         tenant-id: ${{ secrets.TENANT_ID }}
-        solution-file: out/release/${{ secrets.SOLUTION_NAME }}
+        solution-file: out/release/${{ secrets.SOLUTION_NAME }}.zip
         force-overwrite: true
         publish-changes: true
