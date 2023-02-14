@@ -12,7 +12,7 @@ jobs:
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@v0.6.3
       with:
-        solution-folder: sln/${{ secrets.SOLUTION_NAME }}
+        solution-folder: sln/${{ secrets.SOLUTION_NAME }}.zip
         solution-file: out/${{ secrets.SOLUTION_NAME }}.zip
         solution-type: Unmanaged
     - name: Import unmanaged solution
