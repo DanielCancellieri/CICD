@@ -19,8 +19,8 @@ jobs:
       - name: Pack solution
         uses: microsoft/powerplatform-actions/pack-solution@v0.6.3
         with:
-          solution-file: out/${{ secrets.SOLUTION_NAME }}.zip
-          solution-folder: sln/${{ secrets.SOLUTION_NAME }}
+          solution-file: out/Training.zip
+          solution-folder: sln/Training
           solution-type: 'Unmanaged'
       - name: Check solution
         uses: microsoft/powerplatform-actions/check-solution@v0.6.3
