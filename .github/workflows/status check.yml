@@ -12,10 +12,10 @@ jobs:
       - name: Check connectivity
         uses: microsoft/powerplatform-actions/who-am-i@v0.6.3
         with:
-          environment-url: ${{ secrets.ENVIRONMENT_URL }}
-          app-id: ${{ secrets.POWERPLATFORM_APPID }}
-          client-secret: ${{ secrets.POWERPLATFORM_CLIENTSECRET }}
-          tenant-id: ${{ secrets.TENANT_ID }}
+          environment-url: https://org998209ee.crm2.dynamics.com/
+          app-id: 8cde3a27-ffaf-4657-9488-63d5c7e20647
+          client-secret: H0o8Q~Gdj2n-WY20fVFp0~UjnmOwoZFmPaxBebAy
+          tenant-id: ccd0cf26-482b-4c42-87eb-4f231e397f0d
       - name: Pack solution
         uses: microsoft/powerplatform-actions/pack-solution@v0.6.3
         with:
