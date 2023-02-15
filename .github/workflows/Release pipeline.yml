@@ -6,13 +6,13 @@ jobs:
   convert-to-managed:
     runs-on: windows-latest
     environment: 
-      name: 'BUILD'
+      name: 'pba'
     steps:
     - uses: actions/checkout@v2
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@v0.6.3
       with:
-        solution-folder: sln/${{ Training-4147827900 }}
+        solution-folder: sln/${{ secrets.SOLUTION_NAME }}
         solution-file: out/${{ secrets.SOLUTION_NAME }}.zip
         solution-type: Unmanaged
     - name: Import unmanaged solution
