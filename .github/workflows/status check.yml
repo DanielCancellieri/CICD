@@ -19,7 +19,7 @@ jobs:
       - name: Pack solution
         uses: microsoft/powerplatform-actions/pack-solution@v0.6.3
         with:
-          solution-file: out/Training.zip
+          solution-file: out/Training
           solution-folder: sln/Training
           solution-type: 'Unmanaged'
       - name: Check solution
